@@ -1,0 +1,2463 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Sunil Naik - Diploma CSE Student and Aspiring Cybersecurity Professional">
+
+    <title>Sunil Naik | Cybersecurity Portfolio</title>
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #05070d;
+
+            color: #eafff7;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* =====================================================
+           ANIMATED BACKGROUND
+        ===================================================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -2;
+
+            background:
+
+                linear-gradient(
+                    rgba(0,255,157,0.035) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(0,255,157,0.035) 1px,
+                    transparent 1px
+                );
+
+            background-size: 45px 45px;
+
+            animation:
+                gridMove 15s linear infinite;
+
+        }
+
+
+        body::after {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -1;
+
+            pointer-events: none;
+
+            background:
+
+                radial-gradient(
+                    circle at 50% 10%,
+                    rgba(0,255,157,0.12),
+                    transparent 35%
+                );
+
+        }
+
+
+        @keyframes gridMove {
+
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 45px 45px;
+            }
+
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        nav {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            z-index: 999;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background:
+                rgba(5,7,13,0.80);
+
+            backdrop-filter:
+                blur(15px);
+
+            border-bottom:
+                1px solid rgba(0,255,157,0.18);
+
+        }
+
+
+        .logo {
+
+            color: #00ff9d;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 25px;
+
+        }
+
+
+        .nav-links a {
+
+            color: #91aaa3;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .nav-links a:hover {
+
+            color: #00ff9d;
+
+        }
+
+
+        /* =====================================================
+           COMMON
+        ===================================================== */
+
+        section {
+
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding:
+                100px 8% 60px;
+
+        }
+
+
+        .title {
+
+            text-align: center;
+
+            font-size: 32px;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .title span {
+
+            color: #00ff9d;
+
+        }
+
+
+        .card {
+
+            background:
+                rgba(12,18,30,0.75);
+
+            border:
+                1px solid rgba(0,255,157,0.18);
+
+            border-radius: 18px;
+
+            padding: 28px;
+
+            backdrop-filter:
+                blur(12px);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.25);
+
+            transition: 0.35s;
+
+        }
+
+
+        .card:hover {
+
+            border-color:
+                rgba(0,255,157,0.45);
+
+            transform:
+                translateY(-5px);
+
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding-top: 120px;
+
+        }
+
+
+        /* PROFILE IMAGE */
+
+        .profile-photo {
+
+            width: 165px;
+
+            height: 165px;
+
+            margin: 0 auto 25px;
+
+            border-radius: 50%;
+
+            padding: 4px;
+
+            border:
+                2px solid #00ff9d;
+
+            animation:
+                profileGlow 2.5s infinite alternate;
+
+            overflow: hidden;
+
+        }
+
+
+        .profile-photo img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            display: block;
+
+        }
+
+
+        @keyframes profileGlow {
+
+            from {
+
+                box-shadow:
+                    0 0 10px
+                    rgba(0,255,157,0.2);
+
+            }
+
+            to {
+
+                box-shadow:
+                    0 0 40px
+                    rgba(0,255,157,0.55);
+
+            }
+
+        }
+
+
+        .status {
+
+            display: inline-block;
+
+            padding: 8px 16px;
+
+            border:
+                1px solid rgba(0,255,157,0.3);
+
+            border-radius: 50px;
+
+            color: #00ff9d;
+
+            font-size: 13px;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        h1 {
+
+            font-size:
+                clamp(42px,8vw,80px);
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .green {
+
+            color: #00ff9d;
+
+            text-shadow:
+                0 0 25px
+                rgba(0,255,157,0.35);
+
+        }
+
+
+        .typing {
+
+            color: #00d9ff;
+
+            font-size:
+                clamp(18px,3vw,28px);
+
+            min-height: 35px;
+
+        }
+
+
+        .cursor {
+
+            animation:
+                blink 0.7s infinite;
+
+        }
+
+
+        @keyframes blink {
+
+            50% {
+                opacity: 0;
+            }
+
+        }
+
+
+        .hero-description {
+
+            max-width: 700px;
+
+            margin: 22px auto;
+
+            color: #91aaa3;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================================
+           BUTTONS
+        ===================================================== */
+
+        .buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 28px;
+
+        }
+
+
+        .btn {
+
+            display: inline-block;
+
+            padding:
+                12px 20px;
+
+            border:
+                1px solid #00ff9d;
+
+            border-radius: 8px;
+
+            color: #00ff9d;
+
+            text-decoration: none;
+
+            background:
+                rgba(0,255,157,0.04);
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        .btn:hover {
+
+            transform:
+                translateY(-4px);
+
+            background:
+                #00ff9d;
+
+            color: #00140d;
+
+            box-shadow:
+                0 0 25px
+                rgba(0,255,157,0.3);
+
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.3fr 0.7fr;
+
+            gap: 20px;
+
+        }
+
+
+        .card p {
+
+            color: #91aaa3;
+
+            line-height: 1.8;
+
+        }
+
+
+        .card strong {
+
+            color: #ffffff;
+
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5,1fr);
+
+            gap: 14px;
+
+        }
+
+
+        .skill {
+
+            padding: 24px 12px;
+
+            text-align: center;
+
+            border:
+                1px solid
+                rgba(0,255,157,0.18);
+
+            border-radius: 14px;
+
+            background:
+                rgba(0,255,157,0.025);
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        .skill:hover {
+
+            transform:
+                translateY(-8px);
+
+            border-color:
+                #00ff9d;
+
+            box-shadow:
+                0 0 25px
+                rgba(0,255,157,0.12);
+
+        }
+
+
+        .skill-icon {
+
+            font-size: 32px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .skill h3 {
+
+            font-size: 14px;
+
+        }
+
+
+        .skill small {
+
+            display: block;
+
+            margin-top: 8px;
+
+            color: #91aaa3;
+
+            font-size: 11px;
+
+        }
+
+
+        /* =====================================================
+           CAREER
+        ===================================================== */
+
+        .goal-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 20px;
+
+        }
+
+
+        .big-text {
+
+            color: #00ff9d;
+
+            font-size: 27px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        /* =====================================================
+           CERTIFICATES
+        ===================================================== */
+
+        .certificates {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .certificate {
+
+            overflow: hidden;
+
+            cursor: pointer;
+
+        }
+
+
+        .certificate-image {
+
+            height: 190px;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            margin-bottom: 18px;
+
+            border:
+                1px solid
+                rgba(0,255,157,0.15);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #080d15;
+
+        }
+
+
+        .certificate-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+
+        }
+
+
+        .certificate:hover
+        .certificate-image img {
+
+            transform:
+                scale(1.08);
+
+        }
+
+
+        .certificate h3 {
+
+            color: #00ff9d;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .certificate p {
+
+            font-size: 13px;
+
+        }
+
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        .project-empty {
+
+            text-align: center;
+
+            padding: 40px;
+
+        }
+
+
+        .project-empty .icon {
+
+            font-size: 45px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            text-align: center;
+
+        }
+
+
+        .email {
+
+            display: inline-block;
+
+            margin-top: 20px;
+
+            color: #00d9ff;
+
+            font-family: monospace;
+
+            font-size: 16px;
+
+        }
+
+
+        /* =====================================================
+           DISCLAIMER
+        ===================================================== */
+
+        .disclaimer {
+
+            border-left:
+                3px solid #00ff9d;
+
+        }
+
+
+        /* =====================================================
+           MODAL
+        ===================================================== */
+
+        .modal {
+
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 2000;
+
+            background:
+                rgba(0,0,0,0.88);
+
+            backdrop-filter:
+                blur(8px);
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+        }
+
+
+        .modal.active {
+
+            display: flex;
+
+            animation:
+                modalFade 0.3s ease;
+
+        }
+
+
+        @keyframes modalFade {
+
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+
+        }
+
+
+        .modal-box {
+
+            width: 100%;
+
+            max-width: 750px;
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            background: #0b111c;
+
+            border:
+                1px solid #00ff9d;
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            position: relative;
+
+            box-shadow:
+                0 0 50px
+                rgba(0,255,157,0.15);
+
+        }
+
+
+        .close {
+
+            position: absolute;
+
+            top: 15px;
+
+            right: 20px;
+
+            font-size: 28px;
+
+            color: #00ff9d;
+
+            cursor: pointer;
+
+        }
+
+
+        .modal-title {
+
+            color: #00ff9d;
+
+            margin-bottom: 20px;
+
+            padding-right: 30px;
+
+        }
+
+
+        .roadmap-step {
+
+            padding: 15px;
+
+            margin: 10px 0;
+
+            border:
+                1px solid
+                rgba(0,255,157,0.12);
+
+            border-radius: 10px;
+
+            background:
+                rgba(0,255,157,0.025);
+
+        }
+
+
+        .roadmap-step strong {
+
+            color: #00d9ff;
+
+        }
+
+
+        .certificate-preview {
+
+            width: 100%;
+
+            max-height: 70vh;
+
+            object-fit: contain;
+
+            border-radius: 10px;
+
+            display: block;
+
+        }
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ===================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+
+        }
+
+
+        .reveal.show {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            text-align: center;
+
+            padding: 35px 20px;
+
+            border-top:
+                1px solid
+                rgba(0,255,157,0.18);
+
+            color: #91aaa3;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media(max-width:850px) {
+
+            nav {
+
+                padding:
+                    15px 5%;
+
+            }
+
+
+            .nav-links {
+
+                display: none;
+
+            }
+
+
+            section {
+
+                padding-left: 5%;
+
+                padding-right: 5%;
+
+            }
+
+
+            .about-grid,
+
+            .goal-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .skills {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+
+            }
+
+
+            .certificates {
+
+                grid-template-columns: 1fr;
+
+            }
+
+        }
+
+
+        @media(max-width:450px) {
+
+            h1 {
+
+                font-size: 40px;
+
+            }
+
+
+            .skills {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .profile-photo {
+
+                width: 135px;
+
+                height: 135px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+====================================================== -->
+
+<nav>
+
+    <div class="logo">
+        &lt;SUNIL.NAIK/&gt;
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#skills">
+            Skills
+        </a>
+
+        <a href="#certificates">
+            Certificates
+        </a>
+
+        <a href="#projects">
+            Projects
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<section class="hero">
+
+    <div>
+
+
+        <!-- PROFILE PHOTO
+             Replace profile.jpg
+             with your own image -->
+
+        <div class="profile-photo">
+
+            <img
+                src="profile.jpg"
+                alt="Sunil Naik"
+                onerror="
+                    this.style.display='none';
+                    this.parentElement.innerHTML='👤';
+                    this.parentElement.style.fontSize='70px';
+                    this.parentElement.style.display='flex';
+                    this.parentElement.style.alignItems='center';
+                    this.parentElement.style.justifyContent='center';
+                "
+            >
+
+        </div>
+
+
+        <div class="status">
+
+            ● SYSTEM ONLINE • LEARNING MODE
+
+        </div>
+
+
+        <h1>
+
+            Hi, I'm
+
+            <span class="green">
+
+                Sunil Naik
+
+            </span>
+
+        </h1>
+
+
+        <div class="typing">
+
+            <span id="typing"></span>
+
+            <span class="cursor">
+                _
+            </span>
+
+        </div>
+
+
+        <p class="hero-description">
+
+            Diploma Computer Science Engineering student
+            aspiring to build a career in cybersecurity through
+            continuous learning, practical knowledge and
+            hands-on projects.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="#about"
+                class="btn"
+            >
+                Explore Profile ↓
+            </a>
+
+
+            <a
+                href="#contact"
+                class="btn"
+            >
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+====================================================== -->
+
+<section
+    id="about"
+    class="reveal"
+>
+
+    <h2 class="title">
+
+        🎓
+
+        <span>
+            About Me
+        </span>
+
+    </h2>
+
+
+    <div class="about-grid">
+
+
+        <div class="card">
+
+            <p>
+
+                I'm a
+
+                <strong>
+                    3rd Year Diploma Computer Science
+                    Engineering Student
+                </strong>
+
+                with a strong interest in
+
+                <strong>
+                    Cybersecurity & Ethical Hacking
+                </strong>.
+
+                I'm currently building my technical
+                knowledge step by step through learning
+                and practical projects.
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+                🔐 Aspiring Cybersecurity Professional
+            </p>
+
+            <p>
+                🛡️ Interested in Cybersecurity & Ethical Hacking
+            </p>
+
+            <p>
+                📚 Continuous Learner
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3
+                style="
+                color:#00ff9d;
+                margin-bottom:15px;
+                "
+            >
+                Education
+            </h3>
+
+
+            <p>
+                🎓 Diploma in Computer Science Engineering
+                — 3rd Year
+            </p>
+
+            <p>
+                🔧 ITI — Fitter
+            </p>
+
+            <p>
+                🏫 RNS Rural Polytechnic, Murudeshwar
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CURRENTLY LEARNING
+====================================================== -->
+
+<section
+    id="skills"
+    class="reveal"
+>
+
+    <h2 class="title">
+
+        🚀
+
+        <span>
+            Currently Learning
+        </span>
+
+    </h2>
+
+
+    <p
+        style="
+        text-align:center;
+        color:#91aaa3;
+        margin-bottom:30px;
+        "
+    >
+
+        Click a skill to view my learning roadmap.
+
+    </p>
+
+
+    <div class="skills">
+
+
+        <!-- PYTHON -->
+
+        <div
+            class="skill"
+            onclick="openRoadmap('python')"
+        >
+
+            <div class="skill-icon">
+                🐍
+            </div>
+
+            <h3>
+                Python
+            </h3>
+
+            <small>
+                Click for roadmap
+            </small>
+
+        </div>
+
+
+        <!-- LINUX -->
+
+        <div
+            class="skill"
+            onclick="openRoadmap('linux')"
+        >
+
+            <div class="skill-icon">
+                🐧
+            </div>
+
+            <h3>
+                Linux & Kali Linux
+            </h3>
+
+            <small>
+                Click for roadmap
+            </small>
+
+        </div>
+
+
+        <!-- NETWORKING -->
+
+        <div
+            class="skill"
+            onclick="openRoadmap('networking')"
+        >
+
+            <div class="skill-icon">
+                🌐
+            </div>
+
+            <h3>
+                Networking
+            </h3>
+
+            <small>
+                Click for roadmap
+            </small>
+
+        </div>
+
+
+        <!-- WEB SECURITY -->
+
+        <div
+            class="skill"
+            onclick="openRoadmap('web')"
+        >
+
+            <div class="skill-icon">
+                🛡️
+            </div>
+
+            <h3>
+                Web Security
+            </h3>
+
+            <small>
+                Click for roadmap
+            </small>
+
+        </div>
+
+
+        <!-- FUNDAMENTALS -->
+
+        <div
+            class="skill"
+            onclick="openRoadmap('cyber')"
+        >
+
+            <div class="skill-icon">
+                🔐
+            </div>
+
+            <h3>
+                Cybersecurity Fundamentals
+            </h3>
+
+            <small>
+                Click for roadmap
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CAREER GOAL
+====================================================== -->
+
+<section
+    id="goal"
+    class="reveal"
+>
+
+    <h2 class="title">
+
+        🎯
+
+        <span>
+            Career Goal
+        </span>
+
+    </h2>
+
+
+    <div class="goal-grid">
+
+
+        <div class="card">
+
+            <div class="big-text">
+                SOC Analyst
+            </div>
+
+            <p>
+
+                My goal is to build a career as a
+                SOC Analyst and develop strong practical
+                cybersecurity skills through continuous
+                learning, labs and hands-on projects.
+
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="big-text">
+                Learning → Building → Growing
+            </div>
+
+            <p>
+
+                I believe in learning every day,
+                building step by step and improving
+                my technical skills through practical
+                experience.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CERTIFICATES
+====================================================== -->
+
+<section
+    id="certificates"
+    class="reveal"
+>
+
+    <h2 class="title">
+
+        📜
+
+        <span>
+            Certificates
+        </span>
+
+    </h2>
+
+
+    <p
+        style="
+        text-align:center;
+        color:#91aaa3;
+        margin-bottom:30px;
+        "
+    >
+
+        Click a certificate to view it.
+
+    </p>
+
+
+    <div class="certificates">
+
+
+        <!-- =================================================
+             ITI CERTIFICATE
+        ================================================== -->
+
+        <div
+            class="card certificate"
+            onclick="
+                openCertificate(
+                    'ITI — NCVT Government Certificate',
+                    'ncvt.jpeg'
+                )
+            "
+        >
+
+            <div class="certificate-image">
+
+                <img
+                    src="iti-certificate.jpg"
+                    alt="ITI NCVT Certificate"
+                    onerror="
+                        this.style.display='none';
+                        this.parentElement.innerHTML='🎓';
+                        this.parentElement.style.fontSize='60px';
+                    "
+                >
+
+            </div>
+
+
+            <h3>
+                ITI — Fitter
+            </h3>
+
+
+            <p>
+
+                NCVT Government Certificate
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             WEBINAR 1
+        ================================================== -->
+
+        <div
+            class="card certificate"
+            onclick="
+                openCertificate(
+                    'Cybersecurity Webinar Certificate',
+                    'image.png'
+                )
+            "
+        >
+
+            <div class="certificate-image">
+
+                <img
+                    src="webinar-1.jpg"
+                    alt="Webinar Certificate 1"
+                    onerror="
+                        this.style.display='none';
+                        this.parentElement.innerHTML='📜';
+                        this.parentElement.style.fontSize='60px';
+                    "
+                >
+
+            </div>
+
+
+            <h3>
+                Webinar Certificate
+            </h3>
+
+
+            <p>
+
+                Ethical Hacking: Modern Cyber Defense
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             WEBINAR 2
+        ================================================== -->
+
+        <div
+            class="card certificate"
+            onclick="
+                openCertificate(
+                    'Technical Webinar Certificate',
+                    'top.png'
+                )
+            "
+        >
+
+            <div class="certificate-image">
+
+                <img
+                    src="webinar-2.jpg"
+                    alt="Webinar Certificate 2"
+                    onerror="
+                        this.style.display='none';
+                        this.parentElement.innerHTML='📜';
+                        this.parentElement.style.fontSize='60px';
+                    "
+                >
+
+            </div>
+
+
+            <h3>
+                Webinar Certificate
+            </h3>
+
+
+            <p>
+
+                Placement Assistance Program organized by TopGrade Innovation
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECTS
+====================================================== -->
+
+<section
+    id="projects"
+    class="reveal"
+>
+
+    <h2 class="title">
+
+        💻
+
+        <span>
+            Projects
+        </span>
+
+    </h2>
+
+
+    <div class="card project-empty">
+
+        <div class="icon">
+            🚧
+        </div>
+
+
+        <h3
+            style="
+            color:#00ff9d;
+            margin-bottom:12px;
+            "
+        >
+            Projects Coming Soon
+        </h3>
+
+
+        <p>
+
+            This section will be updated as I complete
+            practical cybersecurity projects and labs.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+====================================================== -->
+
+<section
+    id="contact"
+    class="reveal"
+>
+
+    <h2 class="title">
+
+        📡
+
+        <span>
+            Contact
+        </span>
+
+    </h2>
+
+
+    <div class="card contact">
+
+        <h3
+            style="
+            color:#00ff9d;
+            font-size:25px;
+            margin-bottom:12px;
+            "
+        >
+            Let's Connect
+        </h3>
+
+
+        <p>
+
+            Interested in cybersecurity, learning
+            and building practical projects.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="mailto:sunilnaik123c@gmail.com"
+                class="btn"
+            >
+                📧 Email Me
+            </a>
+
+
+            <!-- Future GitHub -->
+
+            <a
+                href="#"
+                class="btn"
+                onclick="
+                    alert('Add your GitHub link here.');
+                "
+            >
+                💻 GitHub
+            </a>
+
+
+            <!-- Future LinkedIn -->
+
+            <a
+                href="#"
+                class="btn"
+                onclick="
+                    alert('Add your LinkedIn link here.');
+                "
+            >
+                🔗 LinkedIn
+            </a>
+
+        </div>
+
+
+        <div class="email">
+
+            sunilnaik123c@gmail.com
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DISCLAIMER
+====================================================== -->
+
+<section
+    id="disclaimer"
+    class="reveal"
+>
+
+    <h2 class="title">
+
+        📌
+
+        <span>
+            Disclaimer
+        </span>
+
+    </h2>
+
+
+    <div class="card disclaimer">
+
+        <p>
+
+            I am currently learning and developing
+            my technical skills.
+
+            This profile will be updated as I gain
+            practical experience and complete
+            cybersecurity projects.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    ⭐ Learning every day.
+    Building step by step.
+
+    <br>
+    <br>
+
+    <span style="color:#00ff9d;">
+
+        © 2026 Sunil Naik
+
+    </span>
+
+</footer>
+
+
+
+<!-- =====================================================
+     ROADMAP MODAL
+====================================================== -->
+
+<div
+    id="roadmapModal"
+    class="modal"
+    onclick="closeOutside(event)"
+>
+
+    <div class="modal-box">
+
+        <div
+            class="close"
+            onclick="closeRoadmap()"
+        >
+            ×
+        </div>
+
+
+        <h2
+            id="roadmapTitle"
+            class="modal-title"
+        >
+            Learning Roadmap
+        </h2>
+
+
+        <div id="roadmapContent">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     CERTIFICATE MODAL
+====================================================== -->
+
+<div
+    id="certificateModal"
+    class="modal"
+    onclick="closeCertificateOutside(event)"
+>
+
+    <div class="modal-box">
+
+        <div
+            class="close"
+            onclick="closeCertificate()"
+        >
+            ×
+        </div>
+
+
+        <h2
+            id="certificateTitle"
+            class="modal-title"
+        >
+            Certificate
+        </h2>
+
+
+        <img
+            id="certificatePreview"
+            class="certificate-preview"
+            src=""
+            alt="Certificate"
+        >
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+
+/* =====================================================
+   TYPING ANIMATION
+===================================================== */
+
+const words = [
+
+    "Aspiring Cybersecurity Professional",
+
+    "Cybersecurity & Ethical Hacking",
+
+    "Diploma CSE Student",
+
+    "Future SOC Analyst"
+
+];
+
+
+let wordIndex = 0;
+
+let charIndex = 0;
+
+let deleting = false;
+
+
+const typing =
+    document.getElementById("typing");
+
+
+function typeEffect() {
+
+
+    const currentWord =
+        words[wordIndex];
+
+
+    if (!deleting) {
+
+        typing.textContent =
+            currentWord.substring(
+                0,
+                charIndex++
+            );
+
+    }
+
+    else {
+
+        typing.textContent =
+            currentWord.substring(
+                0,
+                charIndex--
+            );
+
+    }
+
+
+    let speed =
+        deleting ? 45 : 80;
+
+
+    if (
+        !deleting &&
+        charIndex > currentWord.length
+    ) {
+
+        deleting = true;
+
+        speed = 1200;
+
+    }
+
+
+    else if (
+        deleting &&
+        charIndex < 0
+    ) {
+
+        deleting = false;
+
+        wordIndex =
+            (wordIndex + 1)
+            % words.length;
+
+        charIndex = 0;
+
+        speed = 300;
+
+    }
+
+
+    setTimeout(
+        typeEffect,
+        speed
+    );
+
+}
+
+
+typeEffect();
+
+
+
+/* =====================================================
+   ROADMAP DATA
+===================================================== */
+
+const roadmaps = {
+
+
+    python: {
+
+        title:
+            "🐍 Python Learning Roadmap",
+
+        steps: [
+
+            ["01", "Python Basics",
+             "Variables, data types, operators and input/output"],
+
+            ["02", "Control Flow",
+             "if/else, loops and conditions"],
+
+            ["03", "Functions",
+             "Functions, parameters and return values"],
+
+            ["04", "Data Structures",
+             "Lists, tuples, dictionaries and sets"],
+
+            ["05", "File Handling",
+             "Reading and writing files"],
+
+            ["06", "Cybersecurity Practice",
+             "Use Python to automate small learning projects"]
+
+        ]
+
+    },
+
+
+    linux: {
+
+        title:
+            "🐧 Linux & Kali Linux Roadmap",
+
+        steps: [
+
+            ["01", "Linux Basics",
+             "Files, directories and basic commands"],
+
+            ["02", "File Permissions",
+             "Users, groups and permissions"],
+
+            ["03", "Processes",
+             "Understand processes and system resources"],
+
+            ["04", "Networking Commands",
+             "Useful commands for understanding network activity"],
+
+            ["05", "Kali Linux",
+             "Understand the security-focused Linux environment"],
+
+            ["06", "Practical Labs",
+             "Use authorized labs and learning environments"]
+
+        ]
+
+    },
+
+
+    networking: {
+
+        title:
+            "🌐 Networking Learning Roadmap",
+
+        steps: [
+
+            ["01", "Network Basics",
+             "LAN, WAN, routers, switches and protocols"],
+
+            ["02", "IP Addressing",
+             "IPv4, IPv6 and subnetting fundamentals"],
+
+            ["03", "TCP / UDP",
+             "Understand transport-layer communication"],
+
+            ["04", "DNS & HTTP",
+             "Understand common application protocols"],
+
+            ["05", "Network Security",
+             "Firewalls, authentication and basic security concepts"],
+
+            ["06", "Hands-on Labs",
+             "Practice only on systems you own or are authorized to test"]
+
+        ]
+
+    },
+
+
+    web: {
+
+        title:
+            "🛡️ Web Security Roadmap",
+
+        steps: [
+
+            ["01", "HTML & CSS",
+             "Understand how websites are structured"],
+
+            ["02", "HTTP",
+             "Requests, responses, headers and cookies"],
+
+            ["03", "Authentication",
+             "Understand login and session concepts"],
+
+            ["04", "OWASP Concepts",
+             "Learn common web security risks"],
+
+            ["05", "Secure Coding",
+             "Understand how developers prevent vulnerabilities"],
+
+            ["06", "Authorized Labs",
+             "Practice web security only in legal training environments"]
+
+        ]
+
+    },
+
+
+    cyber: {
+
+        title:
+            "🔐 Cybersecurity Fundamentals Roadmap",
+
+        steps: [
+
+            ["01", "Security Basics",
+             "CIA triad, threats, vulnerabilities and risk"],
+
+            ["02", "Authentication",
+             "Passwords, MFA and access control"],
+
+            ["03", "Network Security",
+             "Basic defensive networking concepts"],
+
+            ["04", "Web Security",
+             "Understand common application security issues"],
+
+            ["05", "Security Monitoring",
+             "Learn logs, alerts and security events"],
+
+            ["06", "SOC Fundamentals",
+             "Understand the basic workflow of a SOC Analyst"]
+
+        ]
+
+    }
+
+};
+
+
+
+/* =====================================================
+   OPEN ROADMAP
+===================================================== */
+
+function openRoadmap(type) {
+
+
+    const data =
+        roadmaps[type];
+
+
+    document.getElementById(
+        "roadmapTitle"
+    ).textContent =
+        data.title;
+
+
+    const content =
+        document.getElementById(
+            "roadmapContent"
+        );
+
+
+    content.innerHTML = "";
+
+
+    data.steps.forEach(step => {
+
+
+        const div =
+            document.createElement("div");
+
+
+        div.className =
+            "roadmap-step";
+
+
+        div.innerHTML = `
+
+            <strong>
+                ${step[0]} — ${step[1]}
+            </strong>
+
+            <br><br>
+
+            <span style="color:#91aaa3;">
+                ${step[2]}
+            </span>
+
+        `;
+
+
+        content.appendChild(div);
+
+    });
+
+
+    document.getElementById(
+        "roadmapModal"
+    ).classList.add("active");
+
+}
+
+
+
+/* =====================================================
+   CLOSE ROADMAP
+===================================================== */
+
+function closeRoadmap() {
+
+    document.getElementById(
+        "roadmapModal"
+    ).classList.remove("active");
+
+}
+
+
+
+/* =====================================================
+   CERTIFICATE VIEWER
+===================================================== */
+
+function openCertificate(title, image) {
+
+
+    document.getElementById(
+        "certificateTitle"
+    ).textContent =
+        title;
+
+
+    document.getElementById(
+        "certificatePreview"
+    ).src =
+        image;
+
+
+    document.getElementById(
+        "certificateModal"
+    ).classList.add("active");
+
+}
+
+
+
+/* =====================================================
+   CLOSE CERTIFICATE
+===================================================== */
+
+function closeCertificate() {
+
+    document.getElementById(
+        "certificateModal"
+    ).classList.remove("active");
+
+}
+
+
+
+/* =====================================================
+   CLOSE WHEN CLICKING OUTSIDE
+===================================================== */
+
+function closeOutside(event) {
+
+    if (
+        event.target.id ===
+        "roadmapModal"
+    ) {
+
+        closeRoadmap();
+
+    }
+
+}
+
+
+function closeCertificateOutside(event) {
+
+    if (
+        event.target.id ===
+        "certificateModal"
+    ) {
+
+        closeCertificate();
+
+    }
+
+}
+
+
+
+/* =====================================================
+   ESC KEY
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            closeRoadmap();
+
+            closeCertificate();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const observer =
+    new IntersectionObserver(
+
+        function(entries) {
+
+            entries.forEach(
+                function(entry) {
+
+                    if (
+                        entry.isIntersecting
+                    ) {
+
+                        entry.target
+                            .classList
+                            .add("show");
+
+                    }
+
+                }
+            );
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
+
+
+document
+    .querySelectorAll(".reveal")
+    .forEach(
+        function(element) {
+
+            observer.observe(element);
+
+        }
+    );
+
+</script>
+
+
+</body>
+</html>
+```
